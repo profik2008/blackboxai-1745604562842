@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Threat Intelligence Dashboard</title>
+    <style>
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px;
+            background: #f9f9f9;
+        }
+        .cisa { border-left: 4px solid #d63384; }
+        .mitre { border-left: 4px solid #0d6efd; }
+    </style>
+</head>
+<body>
+    <h1>Latest Cyber Threat Data</h1>
+
+    <div class="card cisa">
+        <h2>CISA Known Exploited Vulnerabilities (Top 10)</h2>
+        {% for item in cisa_data %}
+            <div>
+                <h3>{{ item.cveID }}</h3>
+                <p><strong>Vendor:</strong> {{ item.vendorProject }}</p>
+                <p>{{ item.shortDescription }}</p>
+                <a href="{{ item.notes }}" target="_blank">Details</a>
+            </div>
+            <hr>
+        {% endfor %}
+    </div>
+
+    <div class="card mitre">
+        <h2>MITRE ATT&CK Techniques (Top 10)</h2>
+        {% for item in mitre_data %}
+            <div>
+                <h3>{{ item.name }} ({{ item.id }})</h3>
+                <p><strong>Tactic:</strong> {{ item.tactic }}</p>
+                <p>{{ item.description }}</p>
+                <a href="https://attack.mitre.org/techniques/{{ item.id }}" target="_blank">MITRE Details</a>
+            </div>
+            <hr>
+        {% endfor %}
+    </div>
+
+    <p>Last updated: {% now "DATETIME_FORMAT" %}</p>
+</body>
+</html>
