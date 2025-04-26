@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Studies - IL-LAB Cybersecurity</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../css/custom.css">
+</head>
+<body class="font-opensans text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0 flex items-center">
+<a href="{% url 'main:index' %}" class="font-montserrat font-bold text-2xl text-[#0F4C81]">IL-LAB</a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+<a href="{% url 'main:index' %}" class="hover:text-[#0F4C81]">Home</a>
+<a href="{% url 'main:about' %}" class="hover:text-[#0F4C81]">About</a>
+<a href="{% url 'main:services' %}" class="hover:text-[#0F4C81]">Services</a>
+<a href="{% url 'main:industries' %}" class="hover:text-[#0F4C81]">Industries</a>
+<a href="{% url 'main:case_studies' %}" class="text-[#0F4C81] font-semibold">Case Studies</a>
+<a href="{% url 'main:blog' %}" class="hover:text-[#0F4C81]">Blog</a>
+<a href="{% url 'main:contact' %}" class="hover:text-[#0F4C81]">Contact</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button type="button" class="text-gray-600 hover:text-gray-900 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="../index.html" class="block px-3 py-2 hover:text-[#0F4C81]">Home</a>
+                <a href="about.html" class="block px-3 py-2 hover:text-[#0F4C81]">About</a>
+                <a href="services.html" class="block px-3 py-2 hover:text-[#0F4C81]">Services</a>
+                <a href="industries.html" class="block px-3 py-2 hover:text-[#0F4C81]">Industries</a>
+                <a href="case-studies.html" class="block px-3 py-2 text-[#0F4C81] font-semibold">Case Studies</a>
+                <a href="blog.html" class="block px-3 py-2 hover:text-[#0F4C81]">Blog</a>
+                <a href="contact.html" class="block px-3 py-2 hover:text-[#0F4C81]">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-12 bg-gradient-to-r from-[#0F4C81] to-[#2A9D8F]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center py-16">
+                <h1 class="font-montserrat font-bold text-4xl md:text-5xl lg:text-6xl text-white mb-6">
+                    Case Studies
+                </h1>
+                <p class="text-xl text-white mb-8 max-w-3xl mx-auto">
+                    Real success stories of how we've helped businesses achieve exceptional cybersecurity outcomes
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-lg text-gray-700 mb-12 max-w-4xl mx-auto text-center">
+                See how IL-LAB has helped businesses across various industries achieve their cybersecurity goals and protect their digital assets.
+            </p>
+        </div>
+    </section>
+
+    <!-- Case Studies Grid -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Case Study 1 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="text-[#2A9D8F]">
+                                <i class="fas fa-shield-alt text-3xl"></i>
+                            </div>
+                            <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded">Healthcare</span>
+                        </div>
+                        <h3 class="font-montserrat font-semibold text-2xl mb-4">Major Hospital Network Security Upgrade</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">Challenge:</h4>
+                                <p class="text-gray-600">A network of hospitals needed to upgrade their security infrastructure while ensuring HIPAA compliance and uninterrupted patient care.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">Solution:</h4>
+                                <p class="text-gray-600">Implemented comprehensive security measures including endpoint protection, network monitoring, and staff training.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">Results:</h4>
+                                <ul class="text-gray-600 space-y-2">
+                                    <li><i class="fas fa-check text-[#2A9D8F] mr-2"></i>75% reduction in security incidents</li>
+                                    <li><i class="fas fa-check text-[#2A9D8F] mr-2"></i>100% HIPAA compliance achieved</li>
+                                    <li><i class="fas fa-check text-[#2A9D8F] mr-2"></i>Zero patient data breaches</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case Study 2 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="text-[#2A9D8F]">
+                                <i class="fas fa-landmark text-3xl"></i>
+                            </div>
+                            <span class="bg-green-100 text-green-800 text-sm font-semibold px-3 py-1 rounded">Financial</span>
+                        </div>
+                        <h3 class="font-montserrat font-semibold text-2xl mb-4">Investment Firm Security Enhancement</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">Challenge:</h4>
+                                <p class="text-gray-600">A growing investment firm needed to strengthen their cybersecurity posture while maintaining operational efficiency.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">Solution:</h4>
+                                <p class="text-gray-600">Deployed advanced threat detection, implemented secure communication channels, and established incident response protocols.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">Results:</h4>
+                                <ul class="text-gray-600 space-y-2">
+                                    <li><i class="fas fa-check text-[#2A9D8F] mr-2"></i>90% faster threat detection</li>
+                                    <li><i class="fas fa-check text-[#2A9D8F] mr-2"></i>PCI-DSS compliance achieved</li>
+                                    <li><i class="fas fa-check text-[#2A9D8F] mr-2"></i>Enhanced client trust</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case Study 3 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="text-[#2A9D8F]">
+                                <i class="fas fa-shopping-cart text-3xl"></i>
+                            </div>
+                            <span class="bg-purple-100 text-purple-800 text-sm font-semibold px-3 py-1 rounded">E-commerce</span>
+                        </div>
+                        <h3 class="font-montserrat font-semibold text-2xl mb-4">E-commerce Platform Protection</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">Challenge:</h4>
+                                <p class="text-gray-600">A major e-commerce platform needed to secure customer data and prevent fraud while scaling operations.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">Solution:</h4>
+                                <p class="text-gray-600">Implemented fraud detection systems, secure payment processing, and real-time monitoring.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">Results:</h4>
+                                <ul class="text-gray-600 space-y-2">
+                                    <li><i class="fas fa-check text-[#2A9D8F] mr-2"></i>95% reduction in fraud attempts</li>
+                                    <li><i class="fas fa-check text-[#2A9D8F] mr-2"></i>Improved customer trust</li>
+                                    <li><i class="fas fa-check text-[#2A9D8F] mr-2"></i>30% increase in transactions</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case Study 4 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="text-[#2A9D8F]">
+                                <i class="fas fa-university text-3xl"></i>
+                            </div>
+                            <span class="bg-yellow-100 text-yellow-800 text-sm font-semibold px-3 py-1 rounded">Education</span>
+                        </div>
+                        <h3 class="font-montserrat font-semibold text-2xl mb-4">University Cybersecurity Transformation</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">Challenge:</h4>
+                                <p class="text-gray-600">A large university needed to protect research data and student information while enabling remote learning.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">Solution:</h4>
+                                <p class="text-gray-600">Deployed comprehensive security infrastructure and implemented secure remote access solutions.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg mb-2">Results:</h4>
+                                <ul class="text-gray-600 space-y-2">
+                                    <li><i class="fas fa-check text-[#2A9D8F] mr-2"></i>Secure remote learning platform</li>
+                                    <li><i class="fas fa-check text-[#2A9D8F] mr-2"></i>Protected research data</li>
+                                    <li><i class="fas fa-check text-[#2A9D8F] mr-2"></i>100% compliance with regulations</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-[#0F4C81] text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="font-montserrat font-bold text-3xl md:text-4xl mb-6">Ready to become our next success story?</h2>
+            <p class="text-xl mb-8">Let's discuss how we can help protect your business.</p>
+<a href="{% url 'main:contact' %}" class="inline-block bg-[#E63946] text-white font-semibold px-8 py-4 rounded-lg hover:bg-red-600 transition duration-300">
+    Get Started Today
+</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <h3 class="font-montserrat font-bold text-xl mb-4">IL-LAB</h3>
+                    <p class="text-gray-400">Securing Your Future Since 2012</p>
+                    <p class="text-gray-400 mt-2">Tel Aviv, Ha-Merkaz, Israel</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-montserrat font-semibold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white">Services</a></li>
+                        <li><a href="industries.html" class="text-gray-400 hover:text-white">Industries</a></li>
+                        <li><a href="case-studies.html" class="text-gray-400 hover:text-white">Case Studies</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="font-montserrat font-semibold text-lg mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="services.html#cybersecurity" class="text-gray-400 hover:text-white">Cybersecurity</a></li>
+                        <li><a href="services.html#protection" class="text-gray-400 hover:text-white">Protection Services</a></li>
+                        <li><a href="services.html#compliance" class="text-gray-400 hover:text-white">Compliance & Audit</a></li>
+                        <li><a href="services.html#managed-it" class="text-gray-400 hover:text-white">Managed IT Services</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="font-montserrat font-semibold text-lg mb-4">Contact Us</h4>
+                    <ul class="space-y-2">
+                        <li class="text-gray-400">Email: info@il-lab.com</li>
+                        <li class="text-gray-400">Tel:+1 972-779-0598</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-400">2012 - 2025 IL-LAB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.querySelector('button').addEventListener('click', function() {
+            const mobileMenu = document.querySelector('.md\\:hidden + div');
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
