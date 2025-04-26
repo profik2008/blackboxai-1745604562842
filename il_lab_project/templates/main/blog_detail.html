@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ post.title }} - IL-LAB Blog</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans&display=swap" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <!-- Custom Styles -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}" />
+</head>
+<body class="font-opensans text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="{% url 'main:index' %}" class="font-montserrat font-bold text-2xl text-[#0F4C81]">IL-LAB</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="{% url 'main:index' %}" class="hover:text-[#0F4C81]">Home</a>
+                    <a href="{% url 'main:about' %}" class="hover:text-[#0F4C81]">About</a>
+                    <a href="{% url 'main:services' %}" class="hover:text-[#0F4C81]">Services</a>
+                    <a href="{% url 'main:industries' %}" class="hover:text-[#0F4C81]">Industries</a>
+                    <a href="{% url 'main:case_studies' %}" class="hover:text-[#0F4C81]">Case Studies</a>
+                    <a href="{% url 'main:blog' %}" class="text-[#0F4C81] font-semibold">Blog</a>
+                    <a href="{% url 'main:contact' %}" class="hover:text-[#0F4C81]">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button type="button" class="text-gray-600 hover:text-gray-900 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="{% url 'main:index' %}" class="block px-3 py-2 hover:text-[#0F4C81]">Home</a>
+                <a href="{% url 'main:about' %}" class="block px-3 py-2 hover:text-[#0F4C81]">About</a>
+                <a href="{% url 'main:services' %}" class="block px-3 py-2 hover:text-[#0F4C81]">Services</a>
+                <a href="{% url 'main:industries' %}" class="block px-3 py-2 hover:text-[#0F4C81]">Industries</a>
+                <a href="{% url 'main:case_studies' %}" class="block px-3 py-2 hover:text-[#0F4C81]">Case Studies</a>
+                <a href="{% url 'main:blog' %}" class="block px-3 py-2 text-[#0F4C81] font-semibold">Blog</a>
+                <a href="{% url 'main:contact' %}" class="block px-3 py-2 hover:text-[#0F4C81]">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Post Content -->
+    <main class="max-w-4xl mx-auto px-4 py-16">
+        <article>
+            <h1 class="font-montserrat font-bold text-4xl mb-4">{{ post.title }}</h1>
+            <p class="text-gray-600 mb-8">{{ post.date }}</p>
+            <div class="prose max-w-none">
+                {{ post.content|safe }}
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="font-montserrat font-bold text-xl mb-4">IL-LAB</h3>
+                    <p class="text-gray-400">Securing Your Future Since 2012</p>
+                    <p class="text-gray-400 mt-2">Tel Aviv, Ha-Merkaz, Israel</p>
+                </div>
+                <div>
+                    <h4 class="font-montserrat font-semibold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="{% url 'main:about' %}" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="{% url 'main:services' %}" class="text-gray-400 hover:text-white">Services</a></li>
+                        <li><a href="{% url 'main:industries' %}" class="text-gray-400 hover:text-white">Industries</a></li>
+                        <li><a href="{% url 'main:case_studies' %}" class="text-gray-400 hover:text-white">Case Studies</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-montserrat font-semibold text-lg mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="{% url 'main:services' %}#cybersecurity" class="text-gray-400 hover:text-white">Cybersecurity</a></li>
+                        <li><a href="{% url 'main:services' %}#protection" class="text-gray-400 hover:text-white">Protection Services</a></li>
+                        <li><a href="{% url 'main:services' %}#compliance" class="text-gray-400 hover:text-white">Compliance & Audit</a></li>
+                        <li><a href="{% url 'main:services' %}#managed-it" class="text-gray-400 hover:text-white">Managed IT Services</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-montserrat font-semibold text-lg mb-4">Contact Us</h4>
+                    <ul class="space-y-2">
+                        <li class="text-gray-400">Email: info@il-lab.com</li>
+                        <li class="text-gray-400">Tel: {{ company_phone }}</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2024 IL-LAB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.querySelector('button').addEventListener('click', function() {
+            const mobileMenu = document.querySelector('.md\\:hidden + div');
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
