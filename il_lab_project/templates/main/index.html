@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IL-LAB - Cybersecurity & IT Protection Services</title>
+    <meta name="description" content="IL-LAB provides world-class cybersecurity, IT protection, and compliance services since 2012. Protect your business with our expert solutions.">
+    <meta name="keywords" content="cybersecurity, IT protection, compliance, penetration testing, data backup, disaster recovery, GDPR, HIPAA, PCI-DSS, managed IT services">
+    <meta name="author" content="IL-LAB Cybersecurity">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+</head>
+<body class="font-opensans text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="{% url 'main:index' %}" class="font-montserrat font-bold text-2xl text-[#0F4C81]">IL-LAB</a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="{% url 'main:index' %}" class="text-[#0F4C81] font-semibold">Home</a>
+                    <a href="{% url 'main:about' %}" class="hover:text-[#0F4C81]">About</a>
+                    <a href="{% url 'main:services' %}" class="hover:text-[#0F4C81]">Services</a>
+                    <a href="{% url 'main:industries' %}" class="hover:text-[#0F4C81]">Industries</a>
+                    <a href="{% url 'main:case_studies' %}" class="hover:text-[#0F4C81]">Case Studies</a>
+                    <a href="{% url 'main:blog' %}" class="hover:text-[#0F4C81]">Blog</a>
+                    <a href="{% url 'main:contact' %}" class="hover:text-[#0F4C81]">Contact</a>
+                    <a href="{% url 'threat_feeds:dashboard' %}" class="hover:text-[#0F4C81]">News</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button type="button" class="text-gray-600 hover:text-gray-900 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="{% url 'main:index' %}" class="block px-3 py-2 text-[#0F4C81] font-semibold">Home</a>
+                <a href="{% url 'main:about' %}" class="block px-3 py-2 hover:text-[#0F4C81]">About</a>
+                <a href="{% url 'main:services' %}" class="block px-3 py-2 hover:text-[#0F4C81]">Services</a>
+                <a href="{% url 'main:industries' %}" class="block px-3 py-2 hover:text-[#0F4C81]">Industries</a>
+                <a href="{% url 'main:case_studies' %}" class="block px-3 py-2 hover:text-[#0F4C81]">Case Studies</a>
+                <a href="{% url 'main:blog' %}" class="block px-3 py-2 hover:text-[#0F4C81]">Blog</a>
+                <a href="{% url 'main:contact' %}" class="block px-3 py-2 hover:text-[#0F4C81]">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-12 bg-gradient-to-r from-[#0F4C81] to-[#2A9D8F]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center py-16">
+                <h1 class="font-montserrat font-bold text-4xl md:text-5xl lg:text-6xl text-white mb-6">
+                    Cybersecurity & IT Protection You Can Trust Since 2012
+                </h1>
+                <p class="text-xl text-white mb-8 max-w-3xl mx-auto">
+                    Protecting businesses from cyber threats with cutting-edge solutions and expert services.
+                </p>
+                <a href="{% url 'main:contact' %}" class="inline-block bg-[#E63946] text-white font-semibold px-8 py-4 rounded-lg hover:bg-red-600 transition duration-300">
+                    Request a Free Consultation
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="font-montserrat font-bold text-3xl md:text-4xl text-[#0F4C81] mb-4">Who We Are</h2>
+                <p class="text-lg text-gray-700 max-w-4xl mx-auto">
+                    At IL-LAB, we've been safeguarding businesses from cyber threats, IT disruptions, and regulatory risks since 2012. Our team is trusted by organizations of all sizes to deliver customized, forward-thinking security and IT solutions. We don't just react to threats — we proactively protect.
+                </p>
+            </div>
+            
+            <!-- Mission Statement -->
+            <div class="bg-gray-50 rounded-lg p-8 mb-16">
+                <h3 class="font-montserrat font-semibold text-2xl text-[#0F4C81] mb-4 text-center">Our Mission</h3>
+                <p class="text-lg text-gray-700 text-center max-w-3xl mx-auto">
+                    To empower businesses to operate fearlessly in a digital world by providing world-class cybersecurity, protection, and audit services.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Services Preview -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-montserrat font-bold text-3xl md:text-4xl text-[#0F4C81] mb-12 text-center">Core Services</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Cybersecurity -->
+                <div class="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="text-[#2A9D8F] mb-4">
+                        <i class="fas fa-shield-alt text-4xl"></i>
+                    </div>
+                    <h3 class="font-montserrat font-semibold text-xl mb-3">Cybersecurity</h3>
+                    <p class="text-gray-600">Penetration testing, incident response, and cybersecurity architecture.</p>
+                </div>
+
+                <!-- Protection Services -->
+                <div class="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="text-[#2A9D8F] mb-4">
+                        <i class="fas fa-lock text-4xl"></i>
+                    </div>
+                    <h3 class="font-montserrat font-semibold text-xl mb-3">Protection Services</h3>
+                    <p class="text-gray-600">Comprehensive IT protection, data backup, and disaster recovery.</p>
+                </div>
+
+                <!-- Compliance & Audit -->
+                <div class="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="text-[#2A9D8F] mb-4">
+                        <i class="fas fa-clipboard-check text-4xl"></i>
+                    </div>
+                    <h3 class="font-montserrat font-semibold text-xl mb-3">Compliance & Audit</h3>
+                    <p class="text-gray-600">Full assessments and readiness consulting for GDPR, HIPAA, PCI-DSS.</p>
+                </div>
+
+                <!-- Managed IT Services -->
+                <div class="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="text-[#2A9D8F] mb-4">
+                        <i class="fas fa-cogs text-4xl"></i>
+                    </div>
+                    <h3 class="font-montserrat font-semibold text-xl mb-3">Managed IT Services</h3>
+                    <p class="text-gray-600">24/7 monitoring, help desk support, and system optimization.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose IL-LAB -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-montserrat font-bold text-3xl md:text-4xl text-[#0F4C81] mb-12 text-center">Why Choose IL-LAB</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 24/7 Monitoring -->
+                <div class="text-center p-6">
+                    <div class="text-[#2A9D8F] mb-4">
+                        <i class="fas fa-clock text-4xl"></i>
+                    </div>
+                    <h3 class="font-montserrat font-semibold text-xl mb-3">24/7 Threat Monitoring</h3>
+                    <p class="text-gray-600">Round-the-clock surveillance and protection for your systems.</p>
+                </div>
+
+                <!-- Track Record -->
+                <div class="text-center p-6">
+                    <div class="text-[#2A9D8F] mb-4">
+                        <i class="fas fa-chart-line text-4xl"></i>
+                    </div>
+                    <h3 class="font-montserrat font-semibold text-xl mb-3">Proven Track Record</h3>
+                    <p class="text-gray-600">Over a decade of excellence in cybersecurity (2012–present).</p>
+                </div>
+
+                <!-- Expert Team -->
+                <div class="text-center p-6">
+                    <div class="text-[#2A9D8F] mb-4">
+                        <i class="fas fa-users text-4xl"></i>
+                    </div>
+                    <h3 class="font-montserrat font-semibold text-xl mb-3">Expert Team</h3>
+                    <p class="text-gray-600">Highly skilled professionals with extensive industry experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-montserrat font-bold text-3xl md:text-4xl text-[#0F4C81] mb-12 text-center">What Our Clients Say</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="text-[#2A9D8F] mb-4">
+                        <i class="fas fa-quote-left text-3xl"></i>
+                    </div>
+                    <p class="text-gray-600 mb-4">"IL-LAB's cybersecurity services have been instrumental in protecting our sensitive data. Their team's expertise and dedication are unmatched."</p>
+                    <p class="font-semibold">- CEO, Financial Services Company</p>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="text-[#2A9D8F] mb-4">
+                        <i class="fas fa-quote-left text-3xl"></i>
+                    </div>
+                    <p class="text-gray-600 mb-4">"The level of service and attention to detail provided by IL-LAB is exceptional. They've helped us achieve and maintain our compliance requirements."</p>
+                    <p class="font-semibold">- CTO, Healthcare Provider</p>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="text-[#2A9D8F] mb-4">
+                        <i class="fas fa-quote-left text-3xl"></i>
+                    </div>
+                    <p class="text-gray-600 mb-4">"Working with IL-LAB has given us peace of mind knowing our IT infrastructure is in capable hands. Their 24/7 support is invaluable."</p>
+                    <p class="font-semibold">- Director, E-commerce Platform</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="py-16 bg-[#0F4C81] text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="font-montserrat font-bold text-3xl md:text-4xl mb-6">Your business deserves protection you can trust.</h2>
+            <p class="text-xl mb-8">Talk to our experts today.</p>
+            <a href="{% url 'main:contact' %}" class="inline-block bg-[#E63946] text-white font-semibold px-8 py-4 rounded-lg hover:bg-red-600 transition duration-300">
+                Get Started
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <h3 class="font-montserrat font-bold text-xl mb-4">IL-LAB</h3>
+                    <p class="text-gray-400">Securing Your Future Since 2012</p>
+                    <p class="text-gray-400 mt-2">Tel Aviv, Ha-Merkaz, Israel</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-montserrat font-semibold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="{% url 'main:about' %}" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="{% url 'main:services' %}" class="text-gray-400 hover:text-white">Services</a></li>
+                        <li><a href="{% url 'main:industries' %}" class="text-gray-400 hover:text-white">Industries</a></li>
+                        <li><a href="{% url 'main:case_studies' %}" class="text-gray-400 hover:text-white">Case Studies</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="font-montserrat font-semibold text-lg mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="{% url 'main:services' %}#cybersecurity" class="text-gray-400 hover:text-white">Cybersecurity</a></li>
+                        <li><a href="{% url 'main:services' %}#protection" class="text-gray-400 hover:text-white">Protection Services</a></li>
+                        <li><a href="{% url 'main:services' %}#compliance" class="text-gray-400 hover:text-white">Compliance & Audit</a></li>
+                        <li><a href="{% url 'main:services' %}#managed-it" class="text-gray-400 hover:text-white">Managed IT Services</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="font-montserrat font-semibold text-lg mb-4">Contact Us</h4>
+                    <ul class="space-y-2">
+                        <li class="text-gray-400">Email: info@il-lab.com</li>
+                        <li class="text-gray-400">Tel: {{ company_phone }}</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2012 - 2025 IL-LAB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.querySelector('button').addEventListener('click', function() {
+            const mobileMenu = document.querySelector('nav > div > div + div');
+            if (mobileMenu) {
+                mobileMenu.classList.toggle('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
