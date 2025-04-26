@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog & Insights - IL-LAB Cybersecurity</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+</head>
+<body class="font-opensans text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="{% url 'main:index' %}" class="font-montserrat font-bold text-2xl text-[#0F4C81]">IL-LAB</a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="{% url 'main:index' %}" class="hover:text-[#0F4C81]">Home</a>
+                    <a href="{% url 'main:about' %}" class="hover:text-[#0F4C81]">About</a>
+                    <a href="{% url 'main:services' %}" class="hover:text-[#0F4C81]">Services</a>
+                    <a href="{% url 'main:industries' %}" class="hover:text-[#0F4C81]">Industries</a>
+                    <a href="{% url 'main:case_studies' %}" class="hover:text-[#0F4C81]">Case Studies</a>
+                    <a href="{% url 'main:blog' %}" class="text-[#0F4C81] font-semibold">Blog</a>
+                    <a href="{% url 'main:contact' %}" class="hover:text-[#0F4C81]">Contact</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button type="button" class="text-gray-600 hover:text-gray-900 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="{% url 'main:index' %}" class="block px-3 py-2 hover:text-[#0F4C81]">Home</a>
+                <a href="{% url 'main:about' %}" class="block px-3 py-2 hover:text-[#0F4C81]">About</a>
+                <a href="{% url 'main:services' %}" class="block px-3 py-2 hover:text-[#0F4C81]">Services</a>
+                <a href="{% url 'main:industries' %}" class="block px-3 py-2 hover:text-[#0F4C81]">Industries</a>
+                <a href="{% url 'main:case_studies' %}" class="block px-3 py-2 hover:text-[#0F4C81]">Case Studies</a>
+                <a href="{% url 'main:blog' %}" class="block px-3 py-2 text-[#0F4C81] font-semibold">Blog</a>
+                <a href="{% url 'main:contact' %}" class="block px-3 py-2 hover:text-[#0F4C81]">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-12 bg-gradient-to-r from-[#0F4C81] to-[#2A9D8F]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center py-16">
+                <h1 class="font-montserrat font-bold text-4xl md:text-5xl lg:text-6xl text-white mb-6">
+                    Blog & Insights
+                </h1>
+                <p class="text-xl text-white mb-8 max-w-3xl mx-auto">
+                    Stay informed with the latest in cybersecurity, IT trends, and digital protection strategies
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Posts Grid -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {% for post in posts %}
+                <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-sm text-gray-500">{{ post.date }}</span>
+                            {% if post.category %}
+                            <span class="text-sm font-semibold px-3 py-1 rounded" style="background-color: '{{ post.category.color }}'; color: white;">
+                                {{ post.category.name }}
+                            </span>
+                            {% else %}
+                            <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded">Blog</span>
+                            {% endif %}
+                        </div>
+                        <h2 class="font-montserrat font-semibold text-xl mb-4">
+                            <a href="{% url 'main:blog_detail' post.slug %}" class="hover:text-[#0F4C81]">{{ post.title }}</a>
+                        </h2>
+                        <div class="prose max-w-none mb-4">{{ post.content|safe }}</div>
+                        <a href="{% url 'main:blog_detail' post.slug %}" class="text-[#2A9D8F] hover:text-[#0F4C81] font-semibold">Read More →</a>
+                    </div>
+                </article>
+                {% empty %}
+                <p>No blog posts available.</p>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-[#0F4C81] rounded-lg p-8 md:p-12">
+                <div class="text-center">
+                    <h2 class="font-montserrat font-bold text-3xl text-white mb-4">Stay Updated</h2>
+                    <p class="text-gray-200 mb-8">Subscribe to our newsletter for the latest cybersecurity insights and updates.</p>
+                    <form id="newsletterForm" class="max-w-md mx-auto">
+                        {% csrf_token %}
+                        <div class="flex flex-col md:flex-row gap-4">
+                            <input type="email" id="newsletterEmail" placeholder="Enter your email" required
+                                class="flex-grow px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2A9D8F]">
+                            <button type="submit" class="bg-[#E63946] text-white font-semibold px-6 py-3 rounded-lg hover:bg-red-600 transition duration-300">
+                                Subscribe
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <h3 class="font-montserrat font-bold text-xl mb-4">IL-LAB</h3>
+                    <p class="text-gray-400">Securing Your Future Since 2012</p>
+                    <p class="text-gray-400 mt-2">Tel Aviv, Ha-Merkaz, Israel</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-montserrat font-semibold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="{% url 'main:about' %}" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="{% url 'main:services' %}" class="text-gray-400 hover:text-white">Services</a></li>
+                        <li><a href="{% url 'main:industries' %}" class="text-gray-400 hover:text-white">Industries</a></li>
+                        <li><a href="{% url 'main:case_studies' %}" class="text-gray-400 hover:text-white">Case Studies</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="font-montserrat font-semibold text-lg mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="{% url 'main:services' %}#cybersecurity" class="text-gray-400 hover:text-white">Cybersecurity</a></li>
+                        <li><a href="{% url 'main:services' %}#protection" class="text-gray-400 hover:text-white">Protection Services</a></li>
+                        <li><a href="{% url 'main:services' %}#compliance" class="text-gray-400 hover:text-white">Compliance & Audit</a></li>
+                        <li><a href="{% url 'main:services' %}#managed-it" class="text-gray-400 hover:text-white">Managed IT Services</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="font-montserrat font-semibold text-lg mb-4">Contact Us</h4>
+                    <ul class="space-y-2">
+                        <li class="text-gray-400">Email: info@il-lab.com</li>
+                        <li class="text-gray-400">Tel: {{ company_phone }}</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2024 IL-LAB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.querySelector('button').addEventListener('click', function() {
+            const mobileMenu = document.querySelector('.md\\:hidden + div');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Newsletter form submission
+        document.getElementById('newsletterForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('newsletterEmail').value;
+
+            try {
+                const response = await fetch('{% url "main:subscribe_newsletter" %}', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value,
+                    },
+                    body: JSON.stringify({ email: email }),
+                });
+
+                const data = await response.json();
+                
+                if (response.ok) {
+                    alert(data.message);
+                    this.reset();
+                } else {
+                    alert('Error: ' + data.message);
+                }
+            } catch (error) {
+                alert('An error occurred. Please try again later.');
+                console.error('Error:', error);
+            }
+        });
+    </script>
+</body>
+</html>
