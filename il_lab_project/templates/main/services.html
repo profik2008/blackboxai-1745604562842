@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - IL-LAB Cybersecurity</title>
+    <meta name="description" content="Explore IL-LAB's comprehensive cybersecurity, IT protection, compliance, and consulting services tailored to your unique needs.">
+    <meta name="keywords" content="cybersecurity services, IT protection, compliance, penetration testing, incident response, data backup, disaster recovery">
+    <meta name="author" content="IL-LAB Cybersecurity">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+</head>
+<body class="font-opensans text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0 flex items-center">
+<a href="{% url 'main:index' %}" class="font-montserrat font-bold text-2xl text-[#0F4C81]">IL-LAB</a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+<a href="{% url 'main:index' %}" class="hover:text-[#0F4C81]">Home</a>
+<a href="{% url 'main:about' %}" class="hover:text-[#0F4C81]">About</a>
+<a href="{% url 'main:services' %}" class="text-[#0F4C81] font-semibold">Services</a>
+<a href="{% url 'main:industries' %}" class="hover:text-[#0F4C81]">Industries</a>
+<a href="{% url 'main:case_studies' %}" class="hover:text-[#0F4C81]">Case Studies</a>
+<a href="{% url 'main:blog' %}" class="hover:text-[#0F4C81]">Blog</a>
+                    <a href="{% url 'main:contact' %}" class="hover:text-[#0F4C81]">Contact</a>
+                    <a href="{% url 'threat_feeds:dashboard' %}" class="hover:text-[#0F4C81]">News</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button type="button" class="text-gray-600 hover:text-gray-900 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="../index.html" class="block px-3 py-2 hover:text-[#0F4C81]">Home</a>
+                <a href="about.html" class="block px-3 py-2 hover:text-[#0F4C81]">About</a>
+                <a href="services.html" class="block px-3 py-2 text-[#0F4C81] font-semibold">Services</a>
+                <a href="industries.html" class="block px-3 py-2 hover:text-[#0F4C81]">Industries</a>
+                <a href="case-studies.html" class="block px-3 py-2 hover:text-[#0F4C81]">Case Studies</a>
+                <a href="blog.html" class="block px-3 py-2 hover:text-[#0F4C81]">Blog</a>
+                <a href="contact.html" class="block px-3 py-2 hover:text-[#0F4C81]">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-12 bg-gradient-to-r from-[#0F4C81] to-[#2A9D8F]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center py-16">
+                <h1 class="font-montserrat font-bold text-4xl md:text-5xl lg:text-6xl text-white mb-6">
+                    Our Services
+                </h1>
+                <p class="text-xl text-white mb-8 max-w-3xl mx-auto">
+                    Comprehensive cybersecurity, IT protection, compliance, and consulting services tailored to your unique needs.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Introduction -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-lg text-gray-700 mb-12 max-w-4xl mx-auto text-center">
+                Whether you are protecting sensitive data, achieving regulatory compliance, or responding to a security breach, our experts are ready to help with customized solutions that fit your business needs.
+            </p>
+        </div>
+    </section>
+
+    <!-- Cybersecurity Services -->
+    <section id="cybersecurity" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-montserrat font-bold text-3xl md:text-4xl text-[#0F4C81] mb-12">Cybersecurity Services</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="text-[#2A9D8F] mb-4">
+                        <i class="fas fa-user-shield text-4xl"></i>
+                    </div>
+                    <h3 class="font-montserrat font-semibold text-xl mb-4">Penetration Testing</h3>
+                    <p class="text-gray-600 mb-4">Simulated cyberattacks to identify vulnerabilities in your systems before real attackers do.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-[#2A9D8F] mr-2"></i>Network Penetration Testing</li>
+                        <li><i class="fas fa-check text-[#2A9D8F] mr-2"></i>Web Application Testing</li>
+                        <li><i class="fas fa-check text-[#2A9D8F] mr-2"></i>Mobile App Security Testing</li>
+                        <li><i class="fas fa-check text-[#2A9D8F] mr-2"></i>Social Engineering Assessments</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="text-[#2A9D8F] mb-4">
+                        <i class="fas fa-shield-virus text-4xl"></i>
+                    </div>
+                    <h3 class="font-montserrat font-semibold text-xl mb-4">Incident Response</h3>
+                    <p class="text-gray-600 mb-4">Immediate action to contain, investigate, and recover from security breaches.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-[#2A9D8F] mr-2"></i>24/7 Emergency Response</li>
+                        <li><i class="fas fa-check text-[#2A9D8F] mr-2"></i>Malware Analysis</li>
+                        <li><i class="fas fa-check text-[#2A9D8F] mr-2"></i>Forensic Investigation</li>
+                        <li><i class="fas fa-check text-[#2A9D8F] mr-2"></i>Recovery Planning</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Protection Services -->
+    <section id="protection" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-montserrat font-bold text-3xl md:text-4xl text-[#0F4C81] mb-12">Protection Services</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-gray-50 p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="text-[#2A9D8F] mb-4">
+                        <i class="fas fa-database text-4xl"></i>
+                    </div>
+                    <h3 class="font-montserrat font-semibold text-xl mb-4">Data Backup & Recovery</h3>
+                    <p class="text-gray-600 mb-4">Secure and reliable data recovery strategies to protect your business continuity.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-[#2A9D8F] mr-2"></i>Automated Backup Solutions</li>
+                        <li><i class="fas fa-check text-[#2A9D8F] mr-2"></i>Cloud Backup Services</li>
+                        <li><i class="fas fa-check text-[#2A9D8F] mr-2"></i>Disaster Recovery Planning</li>
+                        <li><i class="fas fa-check text-[#2A9D8F] mr-2"></i>Data Restoration Services</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gray-50 p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="text-[#2A9D8F] mb-4">
+                        <i class="fas fa-laptop-code text-4xl"></i>
+                    </div>
+                    <h3 class="font-montserrat font-semibold text-xl mb-4">Endpoint Protection</h3>
+                    <p class="text-gray-600 mb-4">Safeguarding devices across your organization from viruses, malware, and breaches.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-[#2A9D8F] mr-2"></i>Advanced Antivirus Solutions</li>
+                        <li><i class="fas fa-check text-[#2A9D8F] mr-2"></i>Device Management</li>
+                        <li><i class="fas fa-check text-[#2A9D8F] mr-2"></i>Access Control</li>
+                        <li><i class="fas fa-check text-[#2A9D8F] mr-2"></i>Real-time Monitoring</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compliance Services -->
+    <section id="compliance" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-montserrat font-bold text-3xl md:text-4xl text-[#0F4C81] mb-12">Audit & Compliance Services</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="text-[#2A9D8F] mb-4">
+                        <i class="fas fa-clipboard-list text-4xl"></i>
+                    </div>
+                    <h3 class="font-montserrat font-semibold text-xl mb-4">Compliance Readiness</h3>
+                    <p class="text-gray-600 mb-4">Preparation and support for various regulatory frameworks.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-[#2A9D8F] mr-2"></i>GDPR Compliance</li>
+                        <li><i class="fas fa-check text-[#2A9D8F] mr-2"></i>HIPAA Compliance</li>
+                        <li><i class="fas fa-check text-[#2A9D8F] mr-2"></i>PCI-DSS Compliance</li>
+                        <li><i class="fas fa-check text-[#2A9D8F] mr-2"></i>CMMC Preparation</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="text-[#2A9D8F] mb-4">
+                        <i class="fas fa-search text-4xl"></i>
+                    </div>
+                    <h3 class="font-montserrat font-semibold text-xl mb-4">Security Gap Analysis</h3>
+                    <p class="text-gray-600 mb-4">Comprehensive assessment of your security posture against industry standards.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-[#2A9D8F] mr-2"></i>Risk Assessment</li>
+                        <li><i class="fas fa-check text-[#2A9D8F] mr-2"></i>Policy Review</li>
+                        <li><i class="fas fa-check text-[#2A9D8F] mr-2"></i>Control Testing</li>
+                        <li><i class="fas fa-check text-[#2A9D8F] mr-2"></i>Remediation Planning</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Managed IT Services -->
+    <section id="managed-it" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="font-montserrat font-bold text-3xl md:text-4xl text-[#0F4C81] mb-12">Managed IT Services</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-gray-50 p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="text-[#2A9D8F] mb-4">
+                        <i class="fas fa-network-wired text-4xl"></i>
+                    </div>
+                    <h3 class="font-montserrat font-semibold text-xl mb-4">Network Optimization</h3>
+                    <p class="text-gray-600 mb-4">Improve efficiency, speed, and resilience of your IT infrastructure.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-[#2A9D8F] mr-2"></i>Network Assessment</li>
+                        <li><i class="fas fa-check text-[#2A9D8F] mr-2"></i>Performance Tuning</li>
+                        <li><i class="fas fa-check text-[#2A9D8F] mr-2"></i>Security Hardening</li>
+                        <li><i class="fas fa-check text-[#2A9D8F] mr-2"></i>24/7 Monitoring</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gray-50 p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="text-[#2A9D8F] mb-4">
+                        <i class="fas fa-chalkboard-teacher text-4xl"></i>
+                    </div>
+                    <h3 class="font-montserrat font-semibold text-xl mb-4">IT Training Programs</h3>
+                    <p class="text-gray-600 mb-4">Educate teams on cybersecurity awareness and best practices.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-[#2A9D8F] mr-2"></i>Security Awareness Training</li>
+                        <li><i class="fas fa-check text-[#2A9D8F] mr-2"></i>Phishing Simulations</li>
+                        <li><i class="fas fa-check text-[#2A9D8F] mr-2"></i>Compliance Training</li>
+                        <li><i class="fas fa-check text-[#2A9D8F] mr-2"></i>Best Practices Workshops</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-[#0F4C81] text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="font-montserrat font-bold text-3xl md:text-4xl mb-6">Ready to secure your business?</h2>
+            <p class="text-xl mb-8">Contact us today for a free consultation.</p>
+            <a href="contact.html" class="inline-block bg-[#E63946] text-white font-semibold px-8 py-4 rounded-lg hover:bg-red-600 transition duration-300">
+                Get Started
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <h3 class="font-montserrat font-bold text-xl mb-4">IL-LAB</h3>
+                    <p class="text-gray-400">Securing Your Future Since 2012</p>
+<p class="text-gray-400 mt-2">Tel Aviv, Ha-Merkaz, Israel</p>
+<p class="text-gray-400 mt-2">Phone: +1 972-779-0598</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-montserrat font-semibold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white">Services</a></li>
+                        <li><a href="industries.html" class="text-gray-400 hover:text-white">Industries</a></li>
+                        <li><a href="case-studies.html" class="text-gray-400 hover:text-white">Case Studies</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="font-montserrat font-semibold text-lg mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#cybersecurity" class="text-gray-400 hover:text-white">Cybersecurity</a></li>
+                        <li><a href="#protection" class="text-gray-400 hover:text-white">Protection Services</a></li>
+                        <li><a href="#compliance" class="text-gray-400 hover:text-white">Compliance & Audit</a></li>
+                        <li><a href="#managed-it" class="text-gray-400 hover:text-white">Managed IT Services</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="font-montserrat font-semibold text-lg mb-4">Contact Us</h4>
+                    <ul class="space-y-2">
+                        <li class="text-gray-400">Email: info@il-lab.com</li>
+                        <li class="text-gray-400">Tel:+1 972-779-0598</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+<p class="text-gray-400">2012 - 2025 IL-LAB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.querySelector('button').addEventListener('click', function() {
+            const mobileMenu = document.querySelector('.md\\:hidden + div');
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
