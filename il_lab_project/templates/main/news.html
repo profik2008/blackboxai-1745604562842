@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Live Cybersecurity News - IL-LAB</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <!-- Custom Styles -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}" />
+</head>
+<body class="font-opensans text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="{% url 'main:index' %}" class="font-montserrat font-bold text-2xl text-[#0F4C81]">IL-LAB</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="{% url 'main:index' %}" class="hover:text-[#0F4C81]">Home</a>
+                    <a href="{% url 'main:about' %}" class="hover:text-[#0F4C81]">About</a>
+                    <a href="{% url 'main:services' %}" class="hover:text-[#0F4C81]">Services</a>
+                    <a href="{% url 'main:industries' %}" class="hover:text-[#0F4C81]">Industries</a>
+                    <a href="{% url 'main:case_studies' %}" class="hover:text-[#0F4C81]">Case Studies</a>
+                    <a href="{% url 'main:blog' %}" class="hover:text-[#0F4C81]">Blog</a>
+                    <a href="{% url 'main:contact' %}" class="hover:text-[#0F4C81]">Contact</a>
+                    <a href="{% url 'main:news' %}" class="text-[#0F4C81] font-semibold">News</a>
+                </div>
+                <div class="md:hidden">
+                    <button type="button" class="text-gray-600 hover:text-gray-900 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="{% url 'main:index' %}" class="block px-3 py-2 hover:text-[#0F4C81]">Home</a>
+                <a href="{% url 'main:about' %}" class="block px-3 py-2 hover:text-[#0F4C81]">About</a>
+                <a href="{% url 'main:services' %}" class="block px-3 py-2 hover:text-[#0F4C81]">Services</a>
+                <a href="{% url 'main:industries' %}" class="block px-3 py-2 hover:text-[#0F4C81]">Industries</a>
+                <a href="{% url 'main:case_studies' %}" class="block px-3 py-2 hover:text-[#0F4C81]">Case Studies</a>
+                <a href="{% url 'main:blog' %}" class="block px-3 py-2 hover:text-[#0F4C81]">Blog</a>
+                <a href="{% url 'main:contact' %}" class="block px-3 py-2 hover:text-[#0F4C81]">Contact</a>
+                <a href="{% url 'main:news' %}" class="block px-3 py-2 text-[#0F4C81] font-semibold">News</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 py-16">
+        <h1 class="font-montserrat font-bold text-4xl mb-8">Live Cybersecurity News</h1>
+
+        <section class="mb-12">
+            <h2 class="font-semibold text-2xl mb-4">CISA Known Exploited Vulnerabilities</h2>
+            {% if cisa_data.vulnerabilities %}
+                <ul class="list-disc list-inside space-y-2">
+                    {% for vuln in cisa_data.vulnerabilities %}
+                        <li>
+                            <strong>{{ vuln.vulnerabilityName }}</strong> - {{ vuln.dateAdded }}<br />
+                            <a href="{{ vuln.vulnerabilityDetailLink }}" target="_blank" class="text-blue-600 hover:underline">Details</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>No data available.</p>
+            {% endif %}
+        </section>
+
+        <section>
+            <h2 class="font-semibold text-2xl mb-4">MITRE ATT&CK Tactics</h2>
+            {% if mitre_data.tactics %}
+                <ul class="list-disc list-inside space-y-2">
+                    {% for tactic in mitre_data.tactics %}
+                        <li>
+                            <strong>{{ tactic.name }}</strong> - {{ tactic.description|default:"No description" }}
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>No data available.</p>
+            {% endif %}
+        </section>
+    </main>
+</body>
+</html>
