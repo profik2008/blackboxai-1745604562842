@@ -1,0 +1,18 @@
+/* Custom styles beyond Tailwind if needed */
+.gradient-bg {
+    background: linear-gradient(135deg, #0F4C81 0%, #2A9D8F 100%);
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom animations */
+.hover-scale {
+    transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
+}
